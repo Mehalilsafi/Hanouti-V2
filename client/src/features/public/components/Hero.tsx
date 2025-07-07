@@ -1,14 +1,12 @@
- import React from 'react'
- 
- function Hero() {
-   return (
-     <div>
-        <p>
-this the hero page of home page 
-        </p>
-        </div>
+import { Button } from '@/components/ui/button';
+import React from 'react';
 
-   )
- }
- 
- export default Hero
+function Hero() {
+  return (
+    <div className="flex min-h-svh flex-col items-center justify-center">
+      <Button>Click me</Button>
+    </div>
+  );
+}
+
+export default Hero;

@@ -1,12 +1,11 @@
 
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import { router } from "../src/routes/AppRoutes";
-import { RouterProvider } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
+import { router } from '../src/routes/AppRoutes';
+import { RouterProvider } from 'react-router-dom';
 function NoMatch() {
   return (
     <div style={{ padding: 20 }}>
-      <h2>404: Page Not Found</h2>
+      <h2 className="text-amber-900">404: Page Not Found</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adip.</p>
     </div>
   );
