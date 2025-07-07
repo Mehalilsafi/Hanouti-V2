@@ -1,0 +1,19 @@
+ import React from 'react'
+
+ import { Outlet } from 'react-router-dom'
+ import Header from '../../../shared/components/layout/header'
+ import Footer from '../../../shared/components/layout/Footer'
+ function PublicLayout() {
+   return (
+     <div className='min-h-screen px-4 sm:px-6 lg:px-8  '>
+     <Header/>
+     <main>
+        <Outlet/>
+     </main>
+     <Footer/>
+
+     </div>
+   )
+ }
+ 
+ export default PublicLayout
