@@ -5,9 +5,9 @@
  import Footer from '../../../shared/components/layout/Footer'
  function PublicLayout() {
    return (
-     <div className='min-h-screen px-4 sm:px-6 lg:px-8  '>
+     <div className='min-h-screen  '>
      <Header/>
-     <main>
+     <main className='min-h-svh'>
         <Outlet/>
      </main>
      <Footer/>

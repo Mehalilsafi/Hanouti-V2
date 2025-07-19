@@ -5,6 +5,25 @@ import {
   PricingPage,
   PublicLayout,
 } from "../features/public";
+import {
+  LoginPage,
+  RegisterPage,
+  ForgetPasswordPage,
+  AuthLayout,
+} from "../features/auth";
+import {
+  DashboardHome,
+  DashboardLayout,
+  ProductPage,
+  OrderPage,
+  SalesBoostPage,
+  AppsPage,
+  LandingPage,
+  DeliveryPricePage,
+  AnalyticsPages,
+  LeadsPage,
+  CreateProductPage,
+} from "../features/dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +41,71 @@ export const router = createBrowserRouter([
       {
         path: "pricing",
         element: <PricingPage />,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <AuthLayout />,
+
+    children: [
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "register",
+        element: <RegisterPage />,
+      },
+      {
+        path: "forgot-password",
+        element: <ForgetPasswordPage />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    children: [
+      {
+        index: true,
+        element: <DashboardHome />,
+      },
+      {
+        path: "products",
+        element: <ProductPage />,
+      },
+      {
+      path: "products/create", 
+      element: <CreateProductPage />,
+    },
+      {
+        path: "orders",
+        element: <OrderPage />,
+      },
+      {
+        path: "sales-boost",
+        element: <SalesBoostPage />,
+      },
+      {
+        path: "apps",
+        element: <AppsPage />,
+      },
+      {
+        path: "landing",
+        element: <LandingPage />,
+      },
+      {
+        path: "delivery",
+        element: <DeliveryPricePage />,
+      },
+      {
+        path: "analytics",
+        element: <AnalyticsPages />,
+      },
+      {
+        path: "leads",
+        element: <LeadsPage />,
       },
     ],
   },

@@ -1,7 +1,9 @@
-
+import Hero from "../components/HeroPricing"
 function PricingPage() {
   return (
-    <div>PricingPage</div>
+    <div>
+      <Hero/>
+    </div>
   )
 }
 
