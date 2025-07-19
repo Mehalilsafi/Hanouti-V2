@@ -23,6 +23,9 @@ import {
   AnalyticsPages,
   LeadsPage,
   CreateProductPage,
+  CreateOrderPage,
+  CreateLeadPage,
+  CreateSalePage,
 } from "../features/dashboard";
 
 export const router = createBrowserRouter([
@@ -83,9 +86,17 @@ export const router = createBrowserRouter([
         path: "orders",
         element: <OrderPage />,
       },
+       {
+      path: "orders/create", 
+      element: <CreateOrderPage />,
+    },
       {
         path: "sales-boost",
         element: <SalesBoostPage />,
+      },
+      {
+        path: "sales-boost/create",
+        element: <CreateSalePage />,
       },
       {
         path: "apps",
@@ -106,6 +117,10 @@ export const router = createBrowserRouter([
       {
         path: "leads",
         element: <LeadsPage />,
+      },
+       {
+        path: "leads/create",
+        element: <CreateLeadPage />,
       },
     ],
   },

@@ -1,7 +1,7 @@
 import React from "react";
 import { PlusCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import { NavLink } from "react-router-dom";
 
 function OrderHero() {
   return (
@@ -22,13 +22,15 @@ function OrderHero() {
           rolling in, you'll see them listed here.
         </p>
 
-       
+       <NavLink to='/dashboard/orders/create'>
+
         <Button 
           className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-brand-primary to-brand-secondary text-white rounded-xl shadow-soft hover:from-brand-secondary hover:to-brand-primary transition-all duration-300 group"
-        >
+          >
           <PlusCircle className="w-5 h-5 mr-2 group-hover:rotate-90 transition-transform duration-300" />
           Create Order
         </Button>
+          </NavLink>
       </div>
     </div>
   );

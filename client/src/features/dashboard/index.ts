@@ -9,3 +9,6 @@ export { default as SalesBoostPage } from "./pages/SalesBoostPage";
 export {default as DeliveryPricePage } from './pages/DeliveryPricePage'
 export {default as AnalyticsPages } from './pages/AnalyticsPages'
 export {default as CreateProductPage}from './pages/CreateProductPage'
+export {default as CreateOrderPage}from './pages/CreateOrderPage'
+export {default as CreateLeadPage}from './pages/CreateLeadPage'
+export {default as CreateSalePage}from './pages/CreateSalePage'
