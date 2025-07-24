@@ -95,11 +95,14 @@ function Sidebar() {
 
       <nav className="p-4 flex flex-col gap-2 font-sans">
         {links.map((link) => {
+
           const Icon = link.icon; 
+          const isDashboard = link.path === "";
           return (
             <NavLink
               key={link.path}
               to={`/dashboard/${link.path}`}
+                end={isDashboard}
               onClick={closeSidebar} 
               className={({ isActive }) =>
                 `flex items-center gap-3 p-3 rounded-lg text-lg font-medium transition-all duration-200 
