@@ -71,12 +71,15 @@ function Register() {
           </div>
 
           {/* Sign Up Button */}
+          <NavLink to="/dashboard">
+
           <Button
             type="submit"
             className="w-full h-12 text-lg font-semibold bg-gradient-to-r from-brand-primary to-brand-secondary text-white rounded-xl shadow-soft hover:from-brand-secondary hover:to-brand-primary transition-all duration-300"
           >
             Sign Up
           </Button>
+            </NavLink>
         </form>
 
         {/* Login Link */}

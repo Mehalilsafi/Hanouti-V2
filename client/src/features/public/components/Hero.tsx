@@ -1,76 +1,76 @@
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { NavLink } from "react-router-dom";
+ import { NavLink } from "react-router-dom"; 
+import { Sparkles } from "lucide-react";
 
 function Hero() {
   return (
-    // Main container: full screen height, using brand-primary for background.
-    // Dark mode uses brand-secondary for a subtle shift.
-    <div className="flex flex-col justify-center items-center gap-12 w-full min-h-screen p-4 sm:p-6 lg:p-8 bg-brand-primary dark:bg-brand-secondary font-sans text-brand-highlight">
-      
-      {/* Main Heading */}
-      <h1 className="font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl flex flex-col items-center justify-center text-center leading-tight">
-        {/* 'Your journey to success' - Uses brand-highlight for primary emphasis */}
-        <span className="block text-brand-highlight dark:text-brand-accent drop-shadow-md">Your journey to success</span>
-        {/* 'begins now' - Uses brand-accent with a subtle shadow for secondary emphasis */}
-        <span className="block text-brand-accent dark:text-brand-highlight text-shadow-lg mt-2">begins now</span>
-      </h1>
-
-      {/* Sub-paragraph */}
-      <p className="font-semibold text-lg sm:text-xl md:text-2xl text-brand-accent dark:text-brand-highlight max-w-4xl text-center leading-relaxed px-4">
-        Make your first sale. Hit your first million. Build your business
-        without limits.
-      </p>
-
-      {/* Action Buttons */}
-      <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
-        <NavLink to='register'>
-
-        <Button 
+   
+    <div className="min-h-screen bg-gradient-to-br from-[#F5F0CD] via-white to-[#FADA7A] py-12 px-4 font-sans flex flex-col justify-center items-center gap-12">
+      <div className="max-w-7xl mx-auto flex flex-col justify-center items-center gap-12 w-full">
         
-          className="font-semibold text-lg px-8 py-4 rounded-xl shadow-soft bg-brand-highlight text-brand-primary hover:bg-brand-accent transition duration-300 ease-in-out"
-        >
-          Start Free Trial
-        </Button>
-          </NavLink>
       
-        <NavLink to='/about'>
-
-        <Button 
-          variant="ghost"
-          className="font-semibold text-lg px-8 py-4 rounded-xl text-brand-accent hover:bg-brand-accent hover:text-brand-primary dark:text-brand-highlight dark:hover:bg-brand-highlight dark:hover:text-brand-secondary transition duration-300 ease-in-out"
-        >
-          Learn More
-        </Button>
-          </NavLink>
-      </div>
-
-      {/* User Avatars & Testimonial */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 p-4 mt-8">
-        {/* Avatar Group */}
-        <div className="flex flex-row flex-wrap items-center gap-3 -space-x-3">
-          {/* Avatar styling uses shadcn defaults which respect your `@theme inline` for `background`, `foreground`, etc. */}
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-          <Avatar>
-            <AvatarImage src="https://github.com/leerob.png" alt="@leerob" />
-            <AvatarFallback>LR</AvatarFallback>
-          </Avatar>
-          <Avatar>
-            <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
-            <AvatarFallback>ER</AvatarFallback>
-          </Avatar>
-          {/* You could add a count avatar if you have more users, using brand colors */}
-          <Avatar className="bg-brand-accent text-brand-primary text-sm font-bold">
-            <AvatarFallback>+2K</AvatarFallback>
-          </Avatar>
+        <div className="flex justify-center">
+          <div className="flex items-center gap-2 bg-gradient-to-r from-[#FADA7A] to-[#F5F0CD] text-[#3674B5] px-6 py-3 rounded-full text-sm font-semibold border border-[#FADA7A] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+            <Sparkles className="w-4 h-4" />
+            Your Success Starts Here
+          </div>
         </div>
-        {/* Testimonial Text: text-brand-accent with dark mode text-brand-highlight */}
-        <p className="text-lg sm:text-xl font-medium text-brand-accent dark:text-brand-highlight max-w-2xl text-center md:text-left">
-          Join thousands of entrepreneurs simplifying their online sales.
+
+     
+        <h1 className="font-semibold text-4xl sm:text-5xl md:font-bold md:text-6xl lg:text-7xl flex flex-col items-center justify-center text-center leading-tight">
+          <span className="block text-[#3674B5] mb-2">Your journey to success</span>
+          <span className="block bg-gradient-to-r from-[#3674B5] via-[#578FCA] to-[#3674B5] bg-clip-text text-transparent font-extrabold">
+            begins now
+          </span>
+        </h1>
+
+
+        <p className="font-medium text-lg sm:text-xl md:text-2xl text-center text-[#578FCA] max-w-4xl leading-relaxed">
+          Make your first sale. Hit your first million. Build your business without limits.
         </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
+          <NavLink to="/register"  className="font-semibold text-lg px-8 py-4 rounded-xl bg-gradient-to-r from-[#3674B5] to-[#578FCA] text-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_20px_-3px_rgba(0,0,0,0.1),0_15px_30px_-5px_rgba(0,0,0,0.06)] transform hover:scale-105 transition-all duration-300 ease-in-out">
+
+          Start free trial
+          </NavLink>
+
+       <NavLink to='/about'className="font-semibold text-lg px-8 py-4 rounded-xl bg-white/90 backdrop-blur-sm text-[#3674B5] border border-[#F5F0CD]/50 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:bg-[#F5F0CD]/50 hover:shadow-[0_4px_20px_-3px_rgba(0,0,0,0.1),0_15px_30px_-5px_rgba(0,0,0,0.06)] transform hover:scale-105 transition-all duration-300 ease-in-out"
+             >
+        learn more
+         
+            </NavLink>
+        </div>
+
+      
+        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1),0_20px_25px_-5px_rgba(0,0,0,0.04)] border border-[#F5F0CD]/30 mt-8">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
+          
+            <div className="flex flex-row items-center gap-3 -space-x-3">
+              <Avatar className="ring-2 ring-[#FADA7A]/50">
+                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                <AvatarFallback className="bg-gradient-to-r from-[#3674B5] to-[#578FCA] text-white">CN</AvatarFallback>
+              </Avatar>
+              <Avatar className="ring-2 ring-[#FADA7A]/50">
+                <AvatarImage src="https://github.com/leerob.png" alt="@leerob" />
+                <AvatarFallback className="bg-gradient-to-r from-[#3674B5] to-[#578FCA] text-white">LR</AvatarFallback>
+              </Avatar>
+              <Avatar className="ring-2 ring-[#FADA7A]/50">
+                <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
+                <AvatarFallback className="bg-gradient-to-r from-[#3674B5] to-[#578FCA] text-white">ER</AvatarFallback>
+              </Avatar>
+              <Avatar className="bg-gradient-to-r from-[#FADA7A] to-[#F5F0CD] text-[#3674B5] text-sm font-bold ring-2 ring-[#FADA7A]/50">
+                <AvatarFallback className="bg-gradient-to-r from-[#FADA7A] to-[#F5F0CD] text-[#3674B5]">+2K</AvatarFallback>
+              </Avatar>
+            </div>
+            
+         
+            <p className="text-lg sm:text-xl font-medium text-[#578FCA] max-w-2xl text-center md:text-left">
+              Join thousands of entrepreneurs simplifying their online sales.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

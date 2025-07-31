@@ -38,13 +38,15 @@ function Login() {
               required
             />
           </div>
+<NavLink to='/dashboard'>
 
           <Button
             type="submit"
             className="w-full h-12 text-lg font-semibold bg-gradient-to-r from-brand-primary to-brand-secondary text-white rounded-xl shadow-soft hover:from-brand-secondary hover:to-brand-primary transition-all duration-300"
-          >
+            >
             Login
           </Button>
+            </NavLink>
         </form>
 
         <NavLink to="/forgot-password" className="mt-6 block text-sm font-medium text-brand-secondary hover:text-brand-primary transition-colors duration-200">

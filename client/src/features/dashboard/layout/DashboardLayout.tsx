@@ -10,7 +10,7 @@ function DashboardLayout() {
       <div className="flex flex-1">
 
       <Sidebar />
-      <main className="flex-1 overflow-auto bg-gradient-to-br from-slate-50 via-brand-accent to-brand-highlight ">
+      <main className="flex-1 overflow-x-auto bg-gradient-to-br from-slate-50 via-brand-accent to-brand-highlight ">
         <Outlet />
       </main>
       </div>

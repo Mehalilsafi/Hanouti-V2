@@ -50,11 +50,11 @@ function Sidebar() {
       icon: BarChart,
     },
 
-    {
-      path: "sales-boost",
-      name: "Sales Boost",
-      icon: TrendingUp,
-    },
+   // {
+   //   path: "sales-boost",
+   //   name: "Sales Boost",
+   //   icon: TrendingUp,
+   // },
    
    
     {
@@ -80,7 +80,7 @@ function Sidebar() {
                   shadow-soft-lg 
                   transition-transform duration-300 ease-in-out 
                   ${isOpen ? "translate-x-0" : "-translate-x-full"} 
-                  md:translate-x-0 md:static md:h-svh `} 
+                  md:translate-x-0 md:static md:min-h-screen `} 
     >
     
       <div className="p-4 flex justify-between items-center md:hidden h-16 border-b border-white/20">
