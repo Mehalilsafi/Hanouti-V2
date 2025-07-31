@@ -1,38 +1,21 @@
-import React, { useState } from "react";
-import { ArrowLeft, ArrowUpFromLine, SquarePen, Trash2, Search, Plus, ListOrdered } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpFromLine, SquarePen, Trash2, Search, Plus, ListOrdered } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { NavLink } from "react-router-dom";
-// Custom Table Components
-const Table = ({ children, className = "" }) => (
-  <table className={`w-full ${className}`}>{children}</table>
-);
-
-const TableHeader = ({ children }) => (
-  <thead>{children}</thead>
-);
-
-const TableBody = ({ children }) => (
-  <tbody>{children}</tbody>
-);
-
-const TableRow = ({ children, className = "" }) => (
-  <tr className={`border-b border-gray-200 ${className}`}>{children}</tr>
-);
-
-const TableHead = ({ children, className = "" }) => (
-  <th className={`px-4 py-3 text-left ${className}`}>{children}</th>
-);
-
-const TableCell = ({ children, className = "" }) => (
-  <td className={`px-4 py-4 ${className}`}>{children}</td>
-);
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 function OrdersTable() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Sample data for orders
   const orders = [
     {
       id: 101,
@@ -72,7 +55,7 @@ function OrdersTable() {
     },
   ];
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status:string) => {
     switch (status.toLowerCase()) {
       case 'pending': return 'bg-yellow-100 text-yellow-800';
       case 'shipped': return 'bg-blue-100 text-blue-800';
@@ -82,7 +65,7 @@ function OrdersTable() {
     }
   };
 
-  const getFilterCount = (filterKey) => {
+  const getFilterCount = (filterKey:string) => {
     if (filterKey === "all") {
       return orders.length;
     }
@@ -122,15 +105,14 @@ function OrdersTable() {
               <span>Export CSV</span>
             </button>
             <NavLink to="/dashboard/orders/create">
-
-            <Button 
-              className="text-white hover:shadow-lg transition-all"
-              style={{ backgroundColor: '#3674B5' }}
+              <Button 
+                className="text-white hover:shadow-lg transition-all"
+                style={{ backgroundColor: '#3674B5' }}
               >
-              <Plus className="w-4 h-4 mr-2" />
-              Create Order
-            </Button>
-              </NavLink>
+                <Plus className="w-4 h-4 mr-2" />
+                Create Order
+              </Button>
+            </NavLink>
           </div>
         </div>
 
@@ -161,12 +143,13 @@ function OrdersTable() {
                   >
                     <Icon className="w-4 h-4" />
                     <span>{filter.label}</span>
-                    <span className={`px-2 py-1 rounded-full text-xs ${
-                      activeFilter === filter.key 
-                        ? 'bg-white/20 text-white' 
-                        : 'bg-brand-accent text-brand-primary' // This class needs to be defined or replaced with inline styles
-                    }`}
-                    style={activeFilter !== filter.key ? {backgroundColor: '#F5F0CD', color: '#3674B5'} : {}}
+                    <span 
+                      className={`px-2 py-1 rounded-full text-xs ${
+                        activeFilter === filter.key 
+                          ? 'bg-white/20 text-white' 
+                          : 'bg-brand-accent text-brand-primary' // This class needs to be defined or replaced with inline styles
+                      }`}
+                      style={activeFilter !== filter.key ? {backgroundColor: '#F5F0CD', color: '#3674B5'} : {}}
                     >
                       {getFilterCount(filter.key)}
                     </span>
@@ -192,49 +175,49 @@ function OrdersTable() {
         {/* Table */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="overflow-x-auto">
-            <Table>
+            <Table className="w-full">
               <TableHeader>
-                <TableRow className="bg-gray-50">
-                  <TableHead className="font-semibold" style={{ color: '#3674B5' }}>Order ID</TableHead>
-                  <TableHead className="font-semibold" style={{ color: '#3674B5' }}>Customer Name</TableHead>
-                  <TableHead className="font-semibold" style={{ color: '#3674B5' }}>Order Date</TableHead>
-                  <TableHead className="font-semibold" style={{ color: '#3674B5' }}>Total Amount</TableHead>
-                  <TableHead className="font-semibold" style={{ color: '#3674B5' }}>Status</TableHead>
-                  <TableHead className="font-semibold" style={{ color: '#3674B5' }}>Delivery Type</TableHead>
-                  <TableHead className="font-semibold text-center" style={{ color: '#3674B5' }}>Actions</TableHead>
+                <TableRow className="bg-gray-50 border-b border-gray-200 hover:bg-gray-50">
+                  <TableHead className="px-4 py-3 text-left font-semibold" style={{ color: '#3674B5' }}>Order ID</TableHead>
+                  <TableHead className="px-4 py-3 text-left font-semibold" style={{ color: '#3674B5' }}>Customer Name</TableHead>
+                  <TableHead className="px-4 py-3 text-left font-semibold" style={{ color: '#3674B5' }}>Order Date</TableHead>
+                  <TableHead className="px-4 py-3 text-left font-semibold" style={{ color: '#3674B5' }}>Total Amount</TableHead>
+                  <TableHead className="px-4 py-3 text-left font-semibold" style={{ color: '#3674B5' }}>Status</TableHead>
+                  <TableHead className="px-4 py-3 text-left font-semibold" style={{ color: '#3674B5' }}>Delivery Type</TableHead>
+                  <TableHead className="px-4 py-3 text-center font-semibold" style={{ color: '#3674B5' }}>Actions</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {filteredOrders.length > 0 ? (
                   filteredOrders.map((order) => (
-                    <TableRow key={order.id} className="hover:bg-gray-50 transition-colors">
-                      <TableCell className="font-medium" style={{ color: '#3674B5' }}>
+                    <TableRow key={order.id} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                      <TableCell className="px-4 py-4 font-medium" style={{ color: '#3674B5' }}>
                         #{order.id.toString().padStart(4, '0')}
                       </TableCell>
                       
-                      <TableCell>
+                      <TableCell className="px-4 py-4">
                         <span className="font-medium text-gray-900">{order.customerName}</span>
                       </TableCell>
                       
-                      <TableCell>
+                      <TableCell className="px-4 py-4">
                         <span className="text-sm text-gray-700">{order.orderDate}</span>
                       </TableCell>
                       
-                      <TableCell>
+                      <TableCell className="px-4 py-4">
                         <span className="font-medium text-gray-900">{order.totalAmount.toFixed(2)} {order.currency}</span>
                       </TableCell>
                       
-                      <TableCell>
+                      <TableCell className="px-4 py-4">
                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(order.status)}`}>
                           {order.status}
                         </span>
                       </TableCell>
 
-                      <TableCell>
+                      <TableCell className="px-4 py-4">
                         <span className="text-sm text-gray-700">{order.deliveryType}</span>
                       </TableCell>
                       
-                      <TableCell>
+                      <TableCell className="px-4 py-4">
                         <div className="flex items-center justify-center gap-2">
                           <button className="p-2 rounded-lg hover:bg-blue-50" style={{ color: '#578FCA' }}>
                             <SquarePen className="w-4 h-4" />
@@ -248,7 +231,7 @@ function OrdersTable() {
                   ))
                 ) : (
                   <TableRow>
-                    <TableCell colSpan="7" className="text-center py-8 text-gray-500">
+                    <TableCell colSpan={7} className="px-4 py-4 text-center text-gray-500">
                       No orders found matching your criteria.
                     </TableCell>
                   </TableRow>

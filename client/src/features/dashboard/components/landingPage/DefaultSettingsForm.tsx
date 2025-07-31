@@ -76,42 +76,6 @@ function DefaultSettingsForm() {
 
   return (
     <>
-      <style jsx global>{`
-        :root {
-          --color-brand-primary: #3674B5;
-          --color-brand-secondary: #578FCA;
-          --color-brand-accent: #F5F0CD;
-          --color-brand-highlight: #FADA7A;
-        }
-        
-        .text-brand-primary { color: var(--color-brand-primary) !important; }
-        .text-brand-secondary { color: var(--color-brand-secondary) !important; }
-        .text-brand-accent { color: var(--color-brand-accent) !important; }
-        .text-brand-highlight { color: var(--color-brand-highlight) !important; }
-        
-        .bg-brand-primary { background-color: var(--color-brand-primary) !important; }
-        .bg-brand-secondary { background-color: var(--color-brand-secondary) !important; }
-        .bg-brand-accent { background-color: var(--color-brand-accent) !important; }
-        .bg-brand-highlight { background-color: var(--color-brand-highlight) !important; }
-        
-        .border-brand-primary { border-color: var(--color-brand-primary) !important; }
-        .border-brand-secondary { border-color: var(--color-brand-secondary) !important; }
-        .border-brand-accent { border-color: var(--color-brand-accent) !important; }
-        .border-brand-highlight { border-color: var(--color-brand-highlight) !important; }
-        
-        .hover\\:bg-brand-primary:hover { background-color: var(--color-brand-primary) !important; }
-        .hover\\:bg-brand-secondary:hover { background-color: var(--color-brand-secondary) !important; }
-        .hover\\:border-brand-secondary:hover { border-color: var(--color-brand-secondary) !important; }
-        
-        .focus\\:ring-brand-primary:focus { 
-          --tw-ring-color: var(--color-brand-primary) !important; 
-          box-shadow: var(--tw-ring-inset) 0 0 0 calc(var(--tw-ring-offset-width) + var(--tw-ring-width)) var(--tw-ring-color) !important;
-        }
-        
-        .data\\[state\\=checked\\]\\:bg-brand-primary[data-state="checked"] { 
-          background-color: var(--color-brand-primary) !important; 
-        }
-      `}</style>
       
       <div className="flex flex-col gap-5 mt-5">
         <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">

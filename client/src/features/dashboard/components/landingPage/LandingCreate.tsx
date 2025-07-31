@@ -23,7 +23,7 @@ function LandingCreate() {
     <Payment />,
     <LandingDetails />,
   ];
-  const { currentStep, step, goTo, next, back, isFirst, isLast } =
+  const { currentStep, step, next, back, isFirst, isLast } =
     useMultiStepForm(compnents);
   console.log("the value f steps :", currentStep);
   const stepIcons = [

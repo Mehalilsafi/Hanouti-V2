@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Outlet } from "react-router-dom";
 import DashboardNav from "@/shared/components/layout/DashboardNav";
 import Sidebar from "@/shared/components/layout/Sidebar";

@@ -1,16 +1,9 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import {
   ListCollapse,
   BookText,
-  Link,
-  Heart,
-  Megaphone,
-  Instagram,
-  Facebook,
-  ArrowDownToLine,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+
 import DefaultSettingsForm from "./DefaultSettingsForm";
 import DefaultSettingsDetails from "./DefaultSettingsDetails";
 function DefaultSettings() {

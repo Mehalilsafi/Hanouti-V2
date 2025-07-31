@@ -1,4 +1,4 @@
-import EmptyLanding from "./EmptyLanding"
+
 import Themes from "./Themes"
 function LandingHero() {
   return (

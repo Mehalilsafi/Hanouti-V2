@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Search, AlignJustify, UserCircle2 } from "lucide-react"; 
+import { Search, AlignJustify } from "lucide-react"; 
 import useStore from "@/shared/store/useSideBarStore"; 
 function DashboardNav() {
   const toggleSideBar = useStore((state) => state.toggleSidebar);

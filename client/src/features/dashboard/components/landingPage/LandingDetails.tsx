@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Flag } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { fr } from "date-fns/locale";
+
 
 function LandingDetails() {
   interface FormData {

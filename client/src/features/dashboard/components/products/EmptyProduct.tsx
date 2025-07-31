@@ -1,8 +1,8 @@
-import React from 'react'
+
 import { Tag  } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { Nav } from "react-day-picker";
+
 function EmptyProduct() {
   return (
     <div className="min-h-screen flex items-center justify-center  font-sans">

@@ -1,32 +1,16 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { ArrowUpFromLine, SquarePen, Trash2, Search, Package, Eye, Plus, Archive, ShoppingCart, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { NavLink } from "react-router-dom";
-// Custom Table Components
-const Table = ({ children, className = "" }) => (
-  <table className={`w-full ${className}`}>{children}</table>
-);
-
-const TableHeader = ({ children }) => (
-  <thead>{children}</thead>
-);
-
-const TableBody = ({ children }) => (
-  <tbody>{children}</tbody>
-);
-
-const TableRow = ({ children, className = "" }) => (
-  <tr className={`border-b border-gray-200 ${className}`}>{children}</tr>
-);
-
-const TableHead = ({ children, className = "" }) => (
-  <th className={`px-4 py-3 text-left ${className}`}>{children}</th>
-);
-
-const TableCell = ({ children, className = "" }) => (
-  <td className={`px-4 py-4 ${className}`}>{children}</td>
-);
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 function ProductTable() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -90,7 +74,7 @@ function ProductTable() {
     }
   ];
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status:string) => {
     switch (status.toLowerCase()) {
       case 'active': return 'bg-green-100 text-green-800';
       case 'low stock': return 'bg-yellow-100 text-yellow-800';
@@ -100,7 +84,7 @@ function ProductTable() {
     }
   };
 
-  const formatPrice = (price) => {
+  const formatPrice = (price:number) => {
     return new Intl.NumberFormat('en-DZ', {
       style: 'currency',
       currency: 'DZD',
@@ -108,11 +92,19 @@ function ProductTable() {
     }).format(price);
   };
 
-  const getStockStatus = (stock) => {
+  const getStockStatus = (stock:number) => {
     if (stock === 0) return { label: 'Out of Stock', color: 'text-red-600' };
     if (stock < 20) return { label: 'Low Stock', color: 'text-yellow-600' };
     return { label: 'In Stock', color: 'text-green-600' };
   };
+
+  const filteredProducts = products.filter(product => {
+    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          product.sku.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          product.category.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesFilter = activeFilter === "all" || product.status.toLowerCase().replace(" ", "-") === activeFilter;
+    return matchesSearch && matchesFilter;
+  });
 
   return (
     <div className="min-h-screen p-4 sm:p-6 lg:p-8 bg-brand-accent">
@@ -133,20 +125,18 @@ function ProductTable() {
               <span>Export CSV</span>
             </button>
             <NavLink to='/dashboard/products/create'>
-
-            <Button className="bg-brand-primary text-white hover:bg-brand-secondary transition-all">
-              <Plus className="w-4 h-4 mr-2" />
-              Add Product
-            </Button>
+              <Button className="bg-brand-primary text-white hover:bg-brand-secondary transition-all">
+                <Plus className="w-4 h-4 mr-2" />
+                Add Product
+              </Button>
             </NavLink>
           </div>
         </div>
 
-     
+      
         <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100 mb-6">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             
-          
             <div className="flex flex-wrap gap-2">
               {[
                 { key: 'all', label: 'All Products', icon: Package, count: 248 },
@@ -179,7 +169,6 @@ function ProductTable() {
               })}
             </div>
 
-        
             <div className="relative w-full lg:w-80">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
               <Input
@@ -193,27 +182,27 @@ function ProductTable() {
           </div>
         </div>
 
-    
+      
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="overflow-x-auto">
-            <Table>
+            <Table className="w-full">
               <TableHeader>
-                <TableRow className="bg-gray-50">
-                  <TableHead className="font-semibold text-brand-primary">Product</TableHead>
-                  <TableHead className="font-semibold text-brand-primary">SKU</TableHead>
-                  <TableHead className="font-semibold text-brand-primary">Category</TableHead>
-                  <TableHead className="font-semibold text-brand-primary">Price</TableHead>
-                  <TableHead className="font-semibold text-brand-primary">Stock</TableHead>
-                  <TableHead className="font-semibold text-brand-primary">Status</TableHead>
-                  <TableHead className="font-semibold text-brand-primary text-center">Actions</TableHead>
+                <TableRow className="bg-gray-50 hover:bg-gray-50 border-b border-gray-200">
+                  <TableHead className="px-4 py-3 text-left font-semibold text-brand-primary">Product</TableHead>
+                  <TableHead className="px-4 py-3 text-left font-semibold text-brand-primary">SKU</TableHead>
+                  <TableHead className="px-4 py-3 text-left font-semibold text-brand-primary">Category</TableHead>
+                  <TableHead className="px-4 py-3 text-left font-semibold text-brand-primary">Price</TableHead>
+                  <TableHead className="px-4 py-3 text-left font-semibold text-brand-primary">Stock</TableHead>
+                  <TableHead className="px-4 py-3 text-left font-semibold text-brand-primary">Status</TableHead>
+                  <TableHead className="px-4 py-3 text-center font-semibold text-brand-primary">Actions</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {products.map((product) => {
+                {filteredProducts.map((product) => {
                   const stockStatus = getStockStatus(product.stock);
                   return (
-                    <TableRow key={product.id} className="hover:bg-gray-50 transition-colors">
-                      <TableCell>
+                    <TableRow key={product.id} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                      <TableCell className="px-4 py-4">
                         <div className="flex items-center gap-3">
                           <div className="w-12 h-12 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
                             <img 
@@ -229,19 +218,19 @@ function ProductTable() {
                         </div>
                       </TableCell>
                       
-                      <TableCell>
+                      <TableCell className="px-4 py-4">
                         <span className="font-mono text-sm bg-gray-100 px-2 py-1 rounded">
                           {product.sku}
                         </span>
                       </TableCell>
                       
-                      <TableCell>
+                      <TableCell className="px-4 py-4">
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-accent text-brand-primary">
                           {product.category}
                         </span>
                       </TableCell>
                       
-                      <TableCell>
+                      <TableCell className="px-4 py-4">
                         <div className="flex flex-col">
                           {product.salePrice ? (
                             <>
@@ -260,7 +249,7 @@ function ProductTable() {
                         </div>
                       </TableCell>
                       
-                      <TableCell>
+                      <TableCell className="px-4 py-4">
                         <div className="flex flex-col">
                           <span className="font-medium text-gray-900">{product.stock} units</span>
                           <span className={`text-xs ${stockStatus.color}`}>
@@ -269,13 +258,13 @@ function ProductTable() {
                         </div>
                       </TableCell>
                       
-                      <TableCell>
+                      <TableCell className="px-4 py-4">
                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(product.status)}`}>
                           {product.status}
                         </span>
                       </TableCell>
                       
-                      <TableCell>
+                      <TableCell className="px-4 py-4">
                         <div className="flex items-center justify-center gap-2">
                           <button className="p-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-brand-primary transition-colors">
                             <Eye className="w-4 h-4" />
@@ -295,7 +284,7 @@ function ProductTable() {
             </Table>
           </div>
           
-       
+        
           <div className="px-6 py-4 border-t border-gray-100 bg-gray-50">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-sm text-gray-600">
@@ -319,8 +308,7 @@ function ProductTable() {
             </div>
           </div>
         </div>
-
-   
+      
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
           <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
             <div className="flex items-center gap-3">

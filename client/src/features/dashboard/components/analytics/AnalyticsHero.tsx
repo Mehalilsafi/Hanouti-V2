@@ -1,6 +1,6 @@
 import { Calendar } from "@/components/ui/calendar";
 import { useState } from "react";
-import { SquareMousePointer, ChevronDown, BarChart3, CalendarDays } from "lucide-react";
+import {  ChevronDown, BarChart3, CalendarDays } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,

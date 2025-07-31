@@ -5,10 +5,9 @@ import {
   Megaphone,
   Instagram,
   Facebook,
-  ArrowUpFromLine, // Changed for semantic correctness for uploads
-  
-  MessageSquareText, // For custom thank you page message
-  ExternalLink, // For Thank you page URL
+  ArrowUpFromLine, 
+  MessageSquareText, 
+  ExternalLink, 
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

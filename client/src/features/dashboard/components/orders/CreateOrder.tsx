@@ -22,7 +22,7 @@ import { NavLink } from "react-router-dom";
 
 function CreateOrder() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [selectedProducts, setSelectedProducts] = useState([]);
+ 
 
   return (
     <div className="min-h-screen p-4 sm:p-6 lg:p-8" style={{ backgroundColor: '#F5F0CD' }}>

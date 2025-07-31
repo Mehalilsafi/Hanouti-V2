@@ -1,11 +1,8 @@
-import { PlusCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { NavLink } from "react-router-dom";
-import { Nav } from "react-day-picker";
+
 import EmptyProduct from "./EmptyProduct";
 import ProductTable from "./ProductTable";
 function Products() {
-  const porudcts:string=[""]
+  const porudcts:string[]=[""]
   return (
     <div className="">
       {

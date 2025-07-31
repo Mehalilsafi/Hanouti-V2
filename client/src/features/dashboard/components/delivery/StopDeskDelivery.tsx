@@ -1,32 +1,12 @@
 
-import React, { useState } from "react";
-import {
-  PlusCircle,
-  House,
-  Home,
-  Warehouse,
-  Truck,
-  MapPin,
-  DollarSign,
-  Settings,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Switch } from "@/components/ui/switch";
+
 import { Input } from "@/components/ui/input";
 import {
   Table,
   TableBody,
-  TableCaption,
+
   TableCell,
-  TableFooter,
+
   TableHead,
   TableHeader,
   TableRow,
