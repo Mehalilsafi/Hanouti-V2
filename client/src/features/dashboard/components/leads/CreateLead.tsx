@@ -160,7 +160,7 @@ function CreateLead() {
               <textarea
                 placeholder="Enter any additional notes about this lead..."
                 className="w-full min-h-[120px] p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary focus:border-transparent resize-none"
-                rows="5"
+                
               />
             </div>
 

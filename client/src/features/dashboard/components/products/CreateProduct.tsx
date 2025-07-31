@@ -49,8 +49,8 @@ function CreateProduct() {
                 </label>
                 <textarea 
                   placeholder="Describe your product..."
-                  className="w-full min-h-[100px] p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                  style={{ '--tw-ring-color': '#578FCA' }}
+                  className="w-full min-h-[100px] p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none "
+                 
                 />
               </div>
             </div>
