@@ -1,4 +1,4 @@
-import React from 'react'
+
 import OrderHero from '../components/orders/OrderHero'
 function OrderPage() {
   return (

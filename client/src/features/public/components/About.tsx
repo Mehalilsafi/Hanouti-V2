@@ -1,10 +1,10 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Lightbulb, Rocket, HeartHandshake, Users, Sparkles, Wand2 } from 'lucide-react';
+
+import {  Lightbulb, Rocket, HeartHandshake, Users, Sparkles, Wand2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 function AboutUsPage() {
   return (
-    // Main container with a vibrant gradient background
+    
     <section className="min-h-screen bg-gradient-to-br from-[#F5F0CD] via-white to-[#FADA7A] py-16 px-4 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto">
 

@@ -4,14 +4,14 @@ import {
   LayoutDashboard,
   Package,
   ShoppingCart,
-  TrendingUp,
+ 
   AppWindow,
   Landmark,
   Truck,
   BarChart,
   Users,
   X, 
-  Settings ,
+
 } from "lucide-react";
 
 function Sidebar() {

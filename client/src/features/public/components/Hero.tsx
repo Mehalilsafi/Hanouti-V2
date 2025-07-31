@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
  import { NavLink } from "react-router-dom"; 
 import { Sparkles } from "lucide-react";

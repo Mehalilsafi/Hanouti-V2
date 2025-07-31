@@ -1,4 +1,4 @@
-import React from 'react'
+
 import DeliveryHero from '../components/delivery/DeliveryHero'
 function DeliveryPricePage() {
   return (
